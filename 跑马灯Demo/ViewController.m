@@ -28,6 +28,7 @@
     self.scrollLableView = [[XLScrollLabelView alloc] initWithFrame:self.notiveView.bounds];
     self.scrollLableView.contentTitle = @" 中共中央政治局4月25日召开会议，分析研究当前经济形势和经济工作。";
     [self.notiveView addSubview:self.scrollLableView];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {

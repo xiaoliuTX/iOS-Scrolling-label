@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#define SCreenWidth [UIScreen mainScreen].bounds.size.width
 
 @interface XLScrollLabelView : UIView
 @property (nonatomic, strong) NSString *contentTitle;

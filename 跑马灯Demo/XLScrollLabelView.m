@@ -7,7 +7,7 @@
 //
 
 #import "XLScrollLabelView.h"
-#define SCreenWidth [UIScreen mainScreen].bounds.size.width
+
 
 typedef NS_ENUM(NSInteger, ScrollingState) {
     ScrollingStateNotBegin = 0,
@@ -64,6 +64,12 @@ typedef NS_ENUM(NSInteger, ScrollingState) {
         self.containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame))];
         [self addSubview:self.containerView];
         
+        // mask遮罩可去掉
+        CALayer *maskLayer = [[CALayer alloc] init];
+        maskLayer.frame = CGRectMake(self.padding, 0, SCreenWidth - 2*self.padding, CGRectGetHeight(self.containerView.frame));
+        maskLayer.backgroundColor = [UIColor blackColor].CGColor;
+        self.layer.mask = maskLayer;
+            
         self.leftLabel.font = [UIFont systemFontOfSize:14];
         self.leftLabel.backgroundColor = self.backgroundColor;
         self.leftLabel.textColor = self.fontColor;
